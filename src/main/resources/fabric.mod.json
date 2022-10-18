@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "maple_forest",
+  "version": "${version}",
+
+  "name": "Maple Forest",
+  "description": "Nice maple forests to prettify the world a bit",
+  "authors": [
+    "Fluffy bumblebee"
+  ],
+  "contact": {
+    "sources": "https://github.com/FluffyBumblebees/Maple-Forest"
+  },
+
+  "license": "LGPL-3.0",
+  "icon": "assets/maple_forest/logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.fluffybumblebee.maple_forest.init.MapleForest"
+    ],
+    "client": [
+      "net.fluffybumblebee.maple_forest.init.MapleForestClient"
+    ],
+    "terrablender": [
+      "net.fluffybumblebee.maple_forest.world.gen.MFBiomeGeneration"
+    ]
+  },
+  "accessWidener": "maple_forest.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "terrablender": "*",
+    "minecraft": "~1.19.2",
+    "java": ">=17"
+  }
+}
