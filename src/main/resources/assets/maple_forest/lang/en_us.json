@@ -33,5 +33,6 @@
   "item.maple_forest.honey_flavoured_pancake": "Honey Flavoured Pancake",
   "item.maple_forest.honeycomb_pancake_sandwich": "Honeycomb Pancake Sandwich",
 
-  "itemGroup.maple_forest.maple_forest": "Maple Forest"
+  "itemGroup.maple_forest.maple_forest": "Maple Forest",
+  "biome.maple_forest.maple_forest": "Maple Forest"
 }
