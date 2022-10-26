@@ -28,7 +28,7 @@ public class FallenTrunkPlacer extends StraightTrunkPlacer {
 
 	@Override
 	protected net.minecraft.world.gen.trunk.TrunkPlacerType<?> getType() {
-		return TrunkPlacerType.FALLEN_TRUNK_PLACER;
+		return MFPlacerTypes.FALLEN_TRUNK_PLACER;
 	}
 
 	@Override

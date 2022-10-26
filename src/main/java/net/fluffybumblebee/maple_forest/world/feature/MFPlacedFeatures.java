@@ -12,8 +12,8 @@ public class MFPlacedFeatures {
         return MFPlacedFeatureRegistration.register(
                 colour + "_"  + MFWoodTypes.MAPLE + "_placer",
                 spawner,
-                2,
-                0.5f,
+                1,
+                0.25f,
                 1
         );
     }

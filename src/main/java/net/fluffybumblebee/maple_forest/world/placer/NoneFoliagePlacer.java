@@ -23,7 +23,7 @@ public class NoneFoliagePlacer extends FoliagePlacer {
 
 	@Override
 	protected FoliagePlacerType<?> getType() {
-		return TrunkPlacerType.NONE_FOLIAGE_PLACER;
+		return MFPlacerTypes.NONE_FOLIAGE_PLACER;
 	}
 
 	@Override

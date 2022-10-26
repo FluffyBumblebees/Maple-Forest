@@ -2,7 +2,7 @@ package net.fluffybumblebee.maple_forest.init;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
-import net.fluffybumblebee.maple_forest.world.placer.TrunkPlacerType;
+import net.fluffybumblebee.maple_forest.world.placer.MFPlacerTypes;
 import net.fluffybumblebee.maple_forest.entity.MFEntities;
 import net.fluffybumblebee.maple_forest.item.MFItems;
 import net.fluffybumblebee.maple_forest.item.group.MFItemGroup;
@@ -23,7 +23,7 @@ public class MapleForest implements ModInitializer {
         MFItemGroup.initClass();
         MFWorldGen.generateWorldGen();
         MFBiomes.addToRegistry();
-        TrunkPlacerType.addToRegistry();
+        MFPlacerTypes.addToRegistry();
 
         if (!FabricLoader.getInstance().isModLoaded("terrablender")) {
             return;
