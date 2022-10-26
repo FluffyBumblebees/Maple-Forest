@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import net.fluffybumblebee.maple_forest.init.MFRegistry;
 import net.fluffybumblebee.maple_forest.init.MapleForest;
 import net.fluffybumblebee.maple_forest.util.type.wood.MFWoodTypes;
+import net.fluffybumblebee.maple_forest.world.placer.ConeFoliagePlacer;
 import net.fluffybumblebee.maple_forest.world.placer.FallenTrunkPlacer;
 import net.fluffybumblebee.maple_forest.world.placer.NoneFoliagePlacer;
 import net.minecraft.block.Block;
@@ -18,7 +19,6 @@ import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.ThreeLayersFeatureSize;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.treedecorator.BeehiveTreeDecorator;
@@ -33,7 +33,7 @@ public class MFConfiguredFeatureRegistration {
             SaplingBlock sapling,
             RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> tree
     ) {
-        return PlacedFeatures.register(name + "checker", tree,
+        return PlacedFeatures.register(MapleForest.NAMESPACE + ":" + name + "_checker", tree,
                 PlacedFeatures.wouldSurvive(sapling));
     }
     public static RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> createTreeSpawn(
@@ -41,7 +41,7 @@ public class MFConfiguredFeatureRegistration {
             RegistryEntry<PlacedFeature> treeChecked,
             float checked
     ) {
-        return ConfiguredFeatures.register(name + "spawner", Feature.RANDOM_SELECTOR,
+        return ConfiguredFeatures.register(MapleForest.NAMESPACE + ":" + name +  "spawner", Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(treeChecked, checked)),
                         treeChecked));
     }
@@ -57,43 +57,43 @@ public class MFConfiguredFeatureRegistration {
                 int trunkSecondRandomHeight,
                 int radius,
                 int offset,
-                int height,
                 int limit,
                 int upperLimit,
                 int lowerSize,
                 int middleSize,
                 int upperSize,
+                float beeChance,
                 OptionalInt minClippedHeight
         ) {
             DataPool<BlockState> randomBlock = DataPool.<BlockState>builder()
                     .add(log.getDefaultState(), 2)
                     .add(logVariant.getDefaultState(), 1)
                     .build();
-            return ConfiguredFeatures.register(name + "tree", Feature.TREE, new TreeFeatureConfig.Builder(
+            return ConfiguredFeatures.register(name + "_tree", Feature.TREE, new TreeFeatureConfig.Builder(
                     new WeightedBlockStateProvider(randomBlock),
                     new StraightTrunkPlacer(trunkHeight, trunkRandomHeight, trunkSecondRandomHeight),
                     BlockStateProvider.of(leaves.getDefaultState()),
-                    new BlobFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(offset), height),
+                    new ConeFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(offset)),
                     new ThreeLayersFeatureSize(limit,upperLimit, lowerSize, middleSize, upperSize, minClippedHeight))
-                    .decorators(List.of(new BeehiveTreeDecorator(0.05F))).build());
+                    .decorators(List.of(new BeehiveTreeDecorator(beeChance))).build());
         }
         public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> registerMapleTree(Block leaves, String colour) {
             return createMapleTree
-                    (       colour + "_"  + MFWoodTypes.MAPLE,
+                    (  MapleForest.NAMESPACE + ":" + colour + "_"  + MFWoodTypes.MAPLE,
                             MFRegistry.MAPLE_LOG,
                             MFRegistry.SAPPY_MAPLE_LOG,
                             leaves,
+                            6,
                             5,
-                            4,
-                            4,
+                            5,
                             2,
                             0,
-                            3,
                             1,
                             1,
                             0,
                             0,
                             2,
+                            0.05F,
                             OptionalInt.empty()
                     );
         }
