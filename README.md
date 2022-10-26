@@ -4,7 +4,7 @@ It also has fallen logs, pumpkin patches and flowers, along with some bee nests 
 You can also add sap (maple syrup) onto some pancakes and make a nice meal!
 
 Here are some pictures:
-![2022-10-19_18 13 23](https://user-images.githubusercontent.com/60066663/196622206-5c6f1a6e-04e9-42fa-97cc-f67513df5866.png)
-![2022-10-19_18 14 14](https://user-images.githubusercontent.com/60066663/196622418-22a09143-104e-4ba1-85ba-7c27ea53a5e9.png)
+![image](https://user-images.githubusercontent.com/60066663/197987896-3d8ce898-c59c-4834-90eb-82d1fc066798.png)
+![image](https://user-images.githubusercontent.com/60066663/197987917-64da39fe-231c-4a23-aef5-a23b59c046cc.png)
 
 https://discord.gg/fMSnenNSXM 
