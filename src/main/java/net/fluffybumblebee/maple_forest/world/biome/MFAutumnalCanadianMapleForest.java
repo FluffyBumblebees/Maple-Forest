@@ -9,6 +9,7 @@ import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 
 
 public class MFAutumnalCanadianMapleForest {
@@ -19,10 +20,11 @@ public class MFAutumnalCanadianMapleForest {
             .spawnSettings(spawnSettings())
             .effects(MFBiomes.createDefaultBiomeEffects()
                     .grassColor(0xB2B207)
-                    .foliageColor(0xB2B207).build()
+                    .foliageColor(0xB2B207)
+                    .build()
             )
-            .temperature(0.8F)
-            .downfall(0.4F)
+            .temperature(0.9F)
+            .downfall(0F)
             .build();
 
     private static GenerationSettings generationSettings(){
@@ -36,6 +38,7 @@ public class MFAutumnalCanadianMapleForest {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFPlacedFeatures.RED_MAPLE_PLACED_NO_BEES);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFPlacedFeatures.MAPLE_TRUNK);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFVegetationPlacedFeatures.PUMPKINS);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_SAVANNA);
         DefaultBiomeFeatures.addForestFlowers(builder);
         DefaultBiomeFeatures.addDefaultFlowers(builder);
         DefaultBiomeFeatures.addForestGrass(builder);

@@ -23,7 +23,7 @@ public class MFBlossomingCanadianMapleForest {
                     .foliageColor(0x78BE21).build()
             )
             .temperature(0.8F)
-            .downfall(0.4F)
+            .downfall(0.5F)
             .build();
 
     private static GenerationSettings generationSettings(){
@@ -34,6 +34,7 @@ public class MFBlossomingCanadianMapleForest {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFPlacedFeatures.GREEN_MAPLE_PLACED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFPlacedFeatures.RED_MAPLE_PLACED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_TALL_GRASS);
         DefaultBiomeFeatures.addForestFlowers(builder);
         DefaultBiomeFeatures.addDefaultFlowers(builder);
         DefaultBiomeFeatures.addForestGrass(builder);

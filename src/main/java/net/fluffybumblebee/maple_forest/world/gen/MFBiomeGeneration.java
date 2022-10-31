@@ -22,9 +22,10 @@ public class MFBiomeGeneration extends Region implements Runnable, TerraBlenderA
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        this.addBiomeSimilar(mapper, BiomeKeys.FLOWER_FOREST, MFBiomes.BLOSSOMING_CANADIAN_MAPLE_FOREST);
-        this.addBiomeSimilar(mapper, BiomeKeys.SAVANNA, MFBiomes.AUTUMNAL_CANADIAN_MAPLE_FOREST);
-
+        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+            builder.replaceBiome(BiomeKeys.SAVANNA, MFBiomes.AUTUMNAL_CANADIAN_MAPLE_FOREST);
+            addBiomeSimilar(mapper, BiomeKeys.FLOWER_FOREST, MFBiomes.BLOSSOMING_CANADIAN_MAPLE_FOREST);
+        });
     }
 
     @Override
