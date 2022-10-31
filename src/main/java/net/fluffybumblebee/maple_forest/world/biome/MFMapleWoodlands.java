@@ -12,8 +12,8 @@ import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 
 
-public class MFAutumnalCanadianMapleForest {
-    public static final Biome AUTUMNAL_CANADIAN_MAPLE_FOREST = new Biome.Builder()
+public class MFMapleWoodlands {
+    public static final Biome MAPLE_WOODLANDS = new Biome.Builder()
             .precipitation(Biome.Precipitation.RAIN)
             .generationSettings(generationSettings())
             .category(Biome.Category.FOREST)
@@ -39,8 +39,6 @@ public class MFAutumnalCanadianMapleForest {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFPlacedFeatures.MAPLE_TRUNK);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFVegetationPlacedFeatures.PUMPKINS);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_SAVANNA);
-        DefaultBiomeFeatures.addForestFlowers(builder);
-        DefaultBiomeFeatures.addDefaultFlowers(builder);
         DefaultBiomeFeatures.addForestGrass(builder);
         DefaultBiomeFeatures.addDefaultMushrooms(builder);
         DefaultBiomeFeatures.addDefaultVegetation(builder);

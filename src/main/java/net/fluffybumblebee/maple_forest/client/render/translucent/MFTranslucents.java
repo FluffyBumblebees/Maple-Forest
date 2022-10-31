@@ -7,7 +7,7 @@ import net.minecraft.client.render.RenderLayer;
 public class MFTranslucents {
     public static void registerTranslucents() {
         BlockRenderLayerMap.INSTANCE.putItems(RenderLayer.getTranslucent(),
-                MFRegistry.SAP
+                MFRegistry.MAPLE_SAP
         );
     }
 }

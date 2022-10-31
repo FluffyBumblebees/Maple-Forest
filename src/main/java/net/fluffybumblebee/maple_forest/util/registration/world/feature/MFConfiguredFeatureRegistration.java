@@ -112,7 +112,7 @@ public class MFConfiguredFeatureRegistration {
                     leaves,
                     colour,
                     "",
-                    0.05F
+                    0.1F
             );
         }
         public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createMapleTreeNoBees(

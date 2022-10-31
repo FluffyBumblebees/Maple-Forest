@@ -3,14 +3,19 @@ package net.fluffybumblebee.maple_forest.util.registration.block;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.fluffybumblebee.maple_forest.blocks.custom.tree.MFSaplings;
 import net.fluffybumblebee.maple_forest.blocks.custom.tree.MFWood;
 import net.fluffybumblebee.maple_forest.init.MapleForest;
+import net.fluffybumblebee.maple_forest.util.type.wood.MFWoodTypes;
+import net.fluffybumblebee.maple_forest.world.feature.tree.MFSaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class MFBlockRegistration {
@@ -65,6 +70,18 @@ public class MFBlockRegistration {
             return register(block, name, ItemGroup.REDSTONE);
         }
         return register(block, name, ItemGroup.MISC);
+    }
+    public static SaplingBlock registerSapling(
+            RegistryEntry<? extends ConfiguredFeature<?, ?>> tree,
+            String colour
+    ) {
+        return (SaplingBlock) register(
+                new MFSaplings(
+                        new MFSaplingGenerator(
+                                () -> tree
+                        )
+                ),
+                colour + "_" + MFWoodTypes.MAPLE + "_sapling");
     }
     public static void registerAndAddStripped(Block blockIn, Block blockOut, String type) {
         register(blockIn, type + "_log");
