@@ -30,24 +30,26 @@ import java.util.OptionalInt;
 public class MFConfiguredFeatureRegistration {
     public static RegistryEntry<PlacedFeature> createTreeChecker(
             String name,
+            String suffix,
             SaplingBlock sapling,
             RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> tree
     ) {
-        return PlacedFeatures.register(MapleForest.NAMESPACE + ":" + name + "_checker", tree,
+        return PlacedFeatures.register(MapleForest.NAMESPACE + ":" + name + "_checker" + "_" + suffix, tree,
                 PlacedFeatures.wouldSurvive(sapling));
     }
+
     public static RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> createTreeSpawn(
             String name,
             RegistryEntry<PlacedFeature> treeChecked,
             float checked
     ) {
-        return ConfiguredFeatures.register(MapleForest.NAMESPACE + ":" + name + "_spawner", Feature.RANDOM_SELECTOR,
+        return ConfiguredFeatures.register(MapleForest.NAMESPACE + ":" + name + "spawner", Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(treeChecked, checked)),
                         treeChecked));
     }
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     public static class BiasedRegistration {
-        public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createMapleTree(
+        public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> mapleTreeTemplate(
                 String name,
                 Block log,
                 Block logVariant,
@@ -69,7 +71,7 @@ public class MFConfiguredFeatureRegistration {
                     .add(log.getDefaultState(), 2)
                     .add(logVariant.getDefaultState(), 1)
                     .build();
-            return ConfiguredFeatures.register(name + "_tree", Feature.TREE, new TreeFeatureConfig.Builder(
+            return ConfiguredFeatures.register(name + "tree", Feature.TREE, new TreeFeatureConfig.Builder(
                     new WeightedBlockStateProvider(randomBlock),
                     new StraightTrunkPlacer(trunkHeight, trunkRandomHeight, trunkSecondRandomHeight),
                     BlockStateProvider.of(leaves.getDefaultState()),
@@ -77,9 +79,14 @@ public class MFConfiguredFeatureRegistration {
                     new ThreeLayersFeatureSize(limit,upperLimit, lowerSize, middleSize, upperSize, minClippedHeight))
                     .decorators(List.of(new BeehiveTreeDecorator(beeChance))).build());
         }
-        public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> registerMapleTree(Block leaves, String colour) {
-            return createMapleTree
-                    (MapleForest.NAMESPACE + ":" + colour + "_" + MFWoodTypes.MAPLE,
+        public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createMapleTree(
+                Block leaves,
+                String colour,
+                String suffix,
+                float beeChance
+        ) {
+            return mapleTreeTemplate
+                    (MapleForest.NAMESPACE + ":" + colour + "_" + MFWoodTypes.MAPLE + "_" + suffix,
                             MFRegistry.MAPLE_LOG,
                             MFRegistry.SAPPY_MAPLE_LOG,
                             leaves,
@@ -93,23 +100,92 @@ public class MFConfiguredFeatureRegistration {
                             0,
                             0,
                             2,
-                            0.05F,
+                            beeChance,
                             OptionalInt.empty()
                     );
         }
-        public static RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> registerMapleTreeSpawner(SaplingBlock sapling, RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> tree, String colour) {
-            return MFConfiguredFeatureRegistration.createTreeSpawn
-                    (
-                            colour +  "_" + MFWoodTypes.MAPLE,
-                            MFConfiguredFeatureRegistration.createTreeChecker
-                                    (
-                                            colour + "_" + MFWoodTypes.MAPLE,
-                                            sapling,
-                                            tree
-                                    ),
-                            0.5f
+        public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createMapleTree(
+                Block leaves,
+                String colour
+        ) {
+            return createMapleTree(
+                    leaves,
+                    colour,
+                    "",
+                    0.05F
+            );
+        }
+        public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createMapleTreeNoBees(
+                Block leaves,
+                String colour
+        ) {
+            return createMapleTree(
+                    leaves,
+                    colour,
+                    "bees",
+                    0F
+            );
+        }
+        public static RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> registerMapleTreeSpawner(
+                SaplingBlock sapling, RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> tree,
+                String colour,
+                String suffix,
+                Boolean addBees
+        ) {
+            if (addBees) {
+                return MFConfiguredFeatureRegistration.createTreeSpawn
+                        (
+                                colour + "_" + MFWoodTypes.MAPLE + "_" + suffix,
+                                MFConfiguredFeatureRegistration.createTreeChecker
+                                        (
+                                                colour + "_" + MFWoodTypes.MAPLE,
+                                                "",
+                                                sapling,
+                                                tree
+                                        ),
+                                0.5f
 
-                    );
+                        );
+            } else {
+                return MFConfiguredFeatureRegistration.createTreeSpawn
+                        (
+                                colour + "_" + MFWoodTypes.MAPLE + "_" + suffix,
+                                MFConfiguredFeatureRegistration.createTreeChecker(
+                                                colour + "_" + MFWoodTypes.MAPLE,
+                                                "no_bees",
+                                                sapling,
+                                                tree
+                                        ),
+                                0.5f
+
+                        );
+            }
+        }
+        public static RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> registerMapleTreeSpawner(
+                SaplingBlock sapling,
+                RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> tree,
+                String colour
+        ) {
+            return registerMapleTreeSpawner(
+                    sapling,
+                    tree,
+                    colour,
+                    "",
+                    true
+            );
+        }
+        public static RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> registerMapleTreeSpawnerNoBees(
+                SaplingBlock sapling,
+                RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> tree,
+                String colour
+        ) {
+            return registerMapleTreeSpawner(
+                    sapling,
+                    tree,
+                    colour,
+                    "no_bees",
+                    false
+            );
         }
         public static <B extends Block> TreeFeatureConfig registerFallenTrunkConfig(B log, B logVariant) {
             DataPool<BlockState> randomBlock = DataPool.<BlockState>builder()

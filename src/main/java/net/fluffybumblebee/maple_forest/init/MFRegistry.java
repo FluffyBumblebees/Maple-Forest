@@ -33,10 +33,10 @@ public class MFRegistry {
     public static final Block ORANGE_MAPLE_LEAVES = MFBlockRegistration.register(new MFLeaves(), "orange_" + MFWoodTypes.MAPLE + "_leaves");
     public static final Block YELLOW_MAPLE_LEAVES = MFBlockRegistration.register(new MFLeaves(), "yellow_" + MFWoodTypes.MAPLE + "_leaves");
     public static final Block GREEN_MAPLE_LEAVES = MFBlockRegistration.register(new MFLeaves(), "green_" + MFWoodTypes.MAPLE + "_leaves");
-    public static final SaplingBlock RED_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.RED_MAPLE_TREE)), "red_" + MFWoodTypes.MAPLE + "_sapling");
-    public static final SaplingBlock GREEN_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.GREEN_MAPLE_TREE)), "green_" + MFWoodTypes.MAPLE + "_sapling");
-    public static final SaplingBlock YELLOW_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.YELLOW_MAPLE_TREE)), "yellow_" + MFWoodTypes.MAPLE + "_sapling");
-    public static final SaplingBlock ORANGE_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.ORANGE_MAPLE_TREE)), "orange_" + MFWoodTypes.MAPLE + "_sapling");
+    public static final SaplingBlock RED_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.RED_MAPLE_TREE_BEES)), "red_" + MFWoodTypes.MAPLE + "_sapling");
+    public static final SaplingBlock GREEN_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.GREEN_MAPLE_TREE_BEES)), "green_" + MFWoodTypes.MAPLE + "_sapling");
+    public static final SaplingBlock YELLOW_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.YELLOW_MAPLE_TREE_BEES)), "yellow_" + MFWoodTypes.MAPLE + "_sapling");
+    public static final SaplingBlock ORANGE_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.ORANGE_MAPLE_TREE_BEES)), "orange_" + MFWoodTypes.MAPLE + "_sapling");
 
     public static final Item SAP = MFItems.register("sap", new MFFood(4, 1));
     public static final Item PANCAKE_DOUGH = MFItems.register("pancake_dough", new MFFood(2, 1));

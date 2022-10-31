@@ -1,6 +1,7 @@
-package net.fluffybumblebee.maple_forest.world.biome;
+package net.fluffybumblebee.maple_forest.init;
 
-import net.fluffybumblebee.maple_forest.init.MapleForest;
+import net.fluffybumblebee.maple_forest.world.biome.MFAutumnalCanadianMapleForest;
+import net.fluffybumblebee.maple_forest.world.biome.MFBlossomingCanadianMapleForest;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
@@ -25,7 +26,7 @@ public class MFBiomes {
 
     public static final Map<RegistryKey<Biome>, Biome> BIOMES = new HashMap<>();
 
-    static void addBasicFeatures(GenerationSettings.Builder generationSettings) {
+    public static void addBasicFeatures(GenerationSettings.Builder generationSettings) {
         DefaultBiomeFeatures.addLandCarvers(generationSettings);
         DefaultBiomeFeatures.addAmethystGeodes(generationSettings);
         DefaultBiomeFeatures.addDungeons(generationSettings);
@@ -72,7 +73,8 @@ public class MFBiomes {
                 .fogColor(0xC0D8FF);
     }
 
-    public static final RegistryKey<Biome> MAPLE_FOREST = add("maple_forest", MFMapleForest.MAPLE_FOREST);
+    public static final RegistryKey<Biome> BLOSSOMING_CANADIAN_MAPLE_FOREST = add("blossoming_canadian_maple_forest", MFBlossomingCanadianMapleForest.BLOSSOMING_CANADIAN_MAPLE_FOREST);
+    public static final RegistryKey<Biome> AUTUMNAL_CANADIAN_MAPLE_FOREST = add("autumnal_canadian_maple_forest", MFAutumnalCanadianMapleForest.AUTUMNAL_CANADIAN_MAPLE_FOREST);
 
 
     static RegistryKey<Biome> add(String name, Biome biome) {

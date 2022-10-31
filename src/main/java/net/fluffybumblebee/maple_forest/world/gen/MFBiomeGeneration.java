@@ -2,7 +2,7 @@ package net.fluffybumblebee.maple_forest.world.gen;
 
 import net.fluffybumblebee.maple_forest.init.MapleForest;
 import com.mojang.datafixers.util.Pair;
-import net.fluffybumblebee.maple_forest.world.biome.MFBiomes;
+import net.fluffybumblebee.maple_forest.init.MFBiomes;
 import net.fluffybumblebee.maple_forest.world.gen.surfacerules.MFSurfaceRules;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -22,7 +22,9 @@ public class MFBiomeGeneration extends Region implements Runnable, TerraBlenderA
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        this.addModifiedVanillaOverworldBiomes(mapper, builder -> builder.replaceBiome(BiomeKeys.FLOWER_FOREST, MFBiomes.MAPLE_FOREST));
+        this.addBiomeSimilar(mapper, BiomeKeys.FLOWER_FOREST, MFBiomes.BLOSSOMING_CANADIAN_MAPLE_FOREST);
+        this.addBiomeSimilar(mapper, BiomeKeys.SAVANNA, MFBiomes.AUTUMNAL_CANADIAN_MAPLE_FOREST);
+
     }
 
     @Override
