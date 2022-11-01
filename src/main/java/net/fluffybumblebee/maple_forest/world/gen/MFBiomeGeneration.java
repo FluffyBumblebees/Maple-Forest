@@ -27,7 +27,6 @@ public class MFBiomeGeneration extends Region implements Runnable, TerraBlenderA
             addBiomeSimilar(mapper, BiomeKeys.FLOWER_FOREST, MFBiomes.MAPLE_BLOSSOM);
         });
     }
-
     @Override
     public void onTerraBlenderInitialized() {
         // We can't do registration stuff until both Traverse and TerraBlender are ready.

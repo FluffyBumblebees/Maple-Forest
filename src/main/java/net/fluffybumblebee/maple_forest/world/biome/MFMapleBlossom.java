@@ -19,7 +19,8 @@ public class MFMapleBlossom {
             .spawnSettings(spawnSettings())
             .effects(MFBiomes.createDefaultBiomeEffects()
                     .grassColor(0x78BE21)
-                    .foliageColor(0x78BE21).build()
+                    .foliageColor(0x78BE21)
+                    .build()
             )
             .temperature(0.8F)
             .downfall(0.5F)
@@ -34,7 +35,6 @@ public class MFMapleBlossom {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFPlacedFeatures.RED_MAPLE_PLACED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_MEADOW);
-        DefaultBiomeFeatures.addJungleGrass(builder);
         DefaultBiomeFeatures.addForestFlowers(builder);
         DefaultBiomeFeatures.addDefaultFlowers(builder);
         DefaultBiomeFeatures.addForestGrass(builder);
