@@ -6,7 +6,6 @@ import net.fluffybumblebee.maple_forest.world.placer.MFPlacerTypes;
 import net.fluffybumblebee.maple_forest.entity.MFEntities;
 import net.fluffybumblebee.maple_forest.item.MFItems;
 import net.fluffybumblebee.maple_forest.item.group.MFItemGroup;
-import net.fluffybumblebee.maple_forest.world.biome.MFBiomes;
 import net.fluffybumblebee.maple_forest.world.gen.MFWorldGen;
 
 import java.util.ArrayList;

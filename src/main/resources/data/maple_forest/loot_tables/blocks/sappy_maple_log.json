@@ -29,7 +29,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "maple_forest:sap",
+              "name": "maple_forest:maple_sap",
               "functions": [
                 {
                   "function": "minecraft:apply_bonus",

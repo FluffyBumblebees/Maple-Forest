@@ -27,7 +27,7 @@
 
   "item.maple_forest.maple_boat": "Maple Boat",
   "item.maple_forest.maple_chest_boat": "Maple Chest Boat",
-  "item.maple_forest.sap": "Sap",
+  "item.maple_forest.maple_sap": "Maple Sap",
   "item.maple_forest.pancake": "Pancake",
   "item.maple_forest.pancake_dough": "Pancake Dough",
   "item.maple_forest.maple_flavoured_pancake": "Maple Flavoured Pancake",
@@ -35,5 +35,6 @@
   "item.maple_forest.honeycomb_pancake_sandwich": "Honeycomb Pancake Sandwich",
 
   "itemGroup.maple_forest.maple_forest": "Maple Forest",
-  "biome.maple_forest.maple_forest": "Maple Forest"
+  "biome.maple_forest.maple_woodlands": "Maple Woodlands",
+  "biome.maple_forest.maple_blossom": "Maple Blossom"
 }

@@ -2,6 +2,7 @@ package net.fluffybumblebee.maple_forest.util.registration.world.feature;
 
 import com.google.common.collect.ImmutableList;
 import net.fluffybumblebee.maple_forest.init.MapleForest;
+import net.fluffybumblebee.maple_forest.util.type.wood.MFWoodTypes;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
@@ -13,6 +14,7 @@ import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MFPlacedFeatureRegistration {
     public static RegistryEntry<PlacedFeature> register(
@@ -23,7 +25,7 @@ public class MFPlacedFeatureRegistration {
             int amountIfExtraSpawns
     ) {
         return PlacedFeatures.register
-                (type + "_spawner",
+                (type,
                         treeSpawn,
                         VegetationPlacedFeatures.modifiers(
                                 PlacedFeatures.createCountExtraModifier(
@@ -78,6 +80,30 @@ public class MFPlacedFeatureRegistration {
                     PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
                     BlockFilterPlacementModifier.of(BlockPredicate.matchingBlockTag(Direction.DOWN.getVector(), BlockTags.DIRT))
             );
+        }
+        public static RegistryEntry<PlacedFeature> registerMaplePlacer(RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> spawner, String colour, String suffix) {
+            if (Objects.equals(suffix, "")) {
+                return MFPlacedFeatureRegistration.register(
+                        colour + "_" + MFWoodTypes.MAPLE + "_placer_" + suffix,
+                        spawner,
+                        2,
+                        0.5f,
+                        1
+                );
+            }
+            if (Objects.equals(suffix, "no_bees")){
+                return MFPlacedFeatureRegistration.register(
+                        colour + "_" + MFWoodTypes.MAPLE + "_placer_" + suffix,
+                        spawner,
+                        1,
+                        0.25f,
+                        1
+                );
+            }
+            throw new NullPointerException();
+        }
+        public static RegistryEntry<PlacedFeature> registerMaplePlacer(RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> spawner, String colour) {
+            return registerMaplePlacer(spawner, colour, "no_bees");
         }
     }
 }

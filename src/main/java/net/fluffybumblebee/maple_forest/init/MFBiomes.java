@@ -1,6 +1,7 @@
-package net.fluffybumblebee.maple_forest.world.biome;
+package net.fluffybumblebee.maple_forest.init;
 
-import net.fluffybumblebee.maple_forest.init.MapleForest;
+import net.fluffybumblebee.maple_forest.world.biome.MFMapleBlossom;
+import net.fluffybumblebee.maple_forest.world.biome.MFMapleWoodlands;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
@@ -26,7 +27,7 @@ public class MFBiomes {
 
     public static final Map<RegistryKey<Biome>, Biome> BIOMES = new HashMap<>();
 
-    static void addBasicFeatures(GenerationSettings.Builder generationSettings) {
+    public static void addBasicFeatures(GenerationSettings.Builder generationSettings) {
         DefaultBiomeFeatures.addLandCarvers(generationSettings);
         DefaultBiomeFeatures.addAmethystGeodes(generationSettings);
         DefaultBiomeFeatures.addDungeons(generationSettings);
@@ -73,7 +74,8 @@ public class MFBiomes {
                 .fogColor(0xC0D8FF);
     }
 
-    public static final RegistryKey<Biome> MAPLE_FOREST = add("maple_forest", MFMapleForest.MAPLE_FOREST);
+    public static final RegistryKey<Biome> MAPLE_BLOSSOM = add("maple_blossom", MFMapleBlossom.MAPLE_BLOSSOM);
+    public static final RegistryKey<Biome> MAPLE_WOODLAND = add("maple_woodlands", MFMapleWoodlands.MAPLE_WOODLANDS);
 
 
     static RegistryKey<Biome> add(String name, Biome biome) {

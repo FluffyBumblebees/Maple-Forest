@@ -38,7 +38,7 @@ public class MFRegistry {
     public static final SaplingBlock YELLOW_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.YELLOW_MAPLE_TREE)), "yellow_" + MFWoodTypes.MAPLE + "_sapling");
     public static final SaplingBlock ORANGE_MAPLE_SAPLING = (SaplingBlock) MFBlockRegistration.register(new MFSaplings(new MFSaplingGenerator(() -> MFConfiguredFeatures.ORANGE_MAPLE_TREE)), "orange_" + MFWoodTypes.MAPLE + "_sapling");
 
-    public static final Item SAP = MFItems.register("sap", new MFFood(4, 1));
+    public static final Item MAPLE_SAP = MFItems.register("maple_sap", new MFFood(4, 1));
     public static final Item PANCAKE_DOUGH = MFItems.register("pancake_dough", new MFFood(2, 1));
     public static final Item PANCAKE = MFItems.register("pancake", new MFFood(4, 1));
     public static final Item HONEY_FLAVOURED_PANCAKE = MFItems.register("honey_flavoured_pancake", new MFFood(8, 1));
