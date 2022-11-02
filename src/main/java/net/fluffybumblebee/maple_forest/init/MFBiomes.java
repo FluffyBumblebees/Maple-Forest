@@ -75,7 +75,7 @@ public class MFBiomes {
     }
 
     public static final RegistryKey<Biome> MAPLE_BLOSSOM = add("maple_blossom", MFMapleBlossom.MAPLE_BLOSSOM);
-    public static final RegistryKey<Biome> MAPLE_WOODLAND = add("maple_woodlands", MFMapleWoodlands.MAPLE_WOODLANDS);
+    public static final RegistryKey<Biome> MAPLE_WOODLANDS = add("maple_woodlands", MFMapleWoodlands.MAPLE_WOODLANDS);
 
 
     static RegistryKey<Biome> add(String name, Biome biome) {
