@@ -34,8 +34,8 @@ public class MFMapleBlossom {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFPlacedFeatures.GREEN_MAPLE_PLACED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFPlacedFeatures.RED_MAPLE_PLACED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_MEADOW);
-        DefaultBiomeFeatures.addJungleGrass(builder);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFVegetationPlacedFeatures.FLOWER_MEADOW);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MFVegetationPlacedFeatures.PATCH_GRASS_JUNGLE);
         DefaultBiomeFeatures.addForestFlowers(builder);
         DefaultBiomeFeatures.addDefaultFlowers(builder);
         DefaultBiomeFeatures.addForestGrass(builder);
