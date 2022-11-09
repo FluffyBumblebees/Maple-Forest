@@ -28,7 +28,7 @@ public class MFBiomeGeneration extends Region implements Runnable, TerraBlenderA
                 ParameterUtils.Humidity.NEUTRAL,
                 ParameterUtils.Continentalness.COAST,
                 ParameterUtils.Erosion.EROSION_6,
-                ParameterUtils.Weirdness.MID_SLICE_VARIANT_DESCENDING,
+                ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_ASCENDING,
                 ParameterUtils.Depth.SURFACE,
                 0L,
                 MAPLE_BLOSSOM
@@ -36,12 +36,12 @@ public class MFBiomeGeneration extends Region implements Runnable, TerraBlenderA
         this.addBiome(
                 mapper,
                 ParameterUtils.Temperature.HOT,
-                ParameterUtils.Humidity.ARID,
-                ParameterUtils.Continentalness.MID_INLAND,
+                ParameterUtils.Humidity.DRY,
+                ParameterUtils.Continentalness.FAR_INLAND,
                 ParameterUtils.Erosion.FULL_RANGE,
                 ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_ASCENDING,
                 ParameterUtils.Depth.SURFACE,
-                2L,
+                0L,
                 MAPLE_WOODLANDS
         );
     }
