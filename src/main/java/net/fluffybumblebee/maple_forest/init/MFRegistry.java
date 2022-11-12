@@ -41,9 +41,9 @@ public class MFRegistry {
     public static final Item MAPLE_SAP = MFItems.register("maple_sap", new MFFood(4, 1));
     public static final Item PANCAKE_DOUGH = MFItems.register("pancake_dough", new MFFood(2, 1));
     public static final Item PANCAKE = MFItems.register("pancake", new MFFood(4, 1));
-    public static final Item HONEY_FLAVOURED_PANCAKE = MFItems.register("honey_flavoured_pancake", new MFFood(8, 1));
-    public static final Item MAPLE_FLAVOURED_PANCAKE = MFItems.register("maple_flavoured_pancake", new MFFood(8, 1));
-    public static final Item HONEYCOMB_PANCAKE_SANDWICH = MFItems.register("honeycomb_pancake_sandwich", new MFFood(10, 1));
+    public static final Item HONEY_FLAVOURED_PANCAKE = MFItems.register("honey_flavoured_pancake", new MFFood(6, 1));
+    public static final Item MAPLE_FLAVOURED_PANCAKE = MFItems.register("maple_flavoured_pancake", new MFFood(6, 1));
+    public static final Item HONEYCOMB_PANCAKE_SANDWICH = MFItems.register("honeycomb_pancake_sandwich", new MFFood(8, 1));
 
     public static final Block SAPPY_MAPLE_LOG = MFBlockRegistration.register(new MFWood(), "sappy_" + MFWoodTypes.MAPLE + "_log");
     public static final Block MAPLE_LOG = MFBlockRegistration.register(new MFWood(), MFWoodTypes.MAPLE + "_log");
