@@ -43,7 +43,7 @@ public class MFConfiguredFeatureRegistration {
             RegistryEntry<PlacedFeature> treeChecked,
             float checked
     ) {
-        return ConfiguredFeatures.register(MapleForest.NAMESPACE + ":" + name + "spawner", Feature.RANDOM_SELECTOR,
+        return ConfiguredFeatures.register(MapleForest.NAMESPACE + ":" + name + "_spawner", Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(treeChecked, checked)),
                         treeChecked));
     }
@@ -71,7 +71,7 @@ public class MFConfiguredFeatureRegistration {
                     .add(log.getDefaultState(), 2)
                     .add(logVariant.getDefaultState(), 1)
                     .build();
-            return ConfiguredFeatures.register(name + "tree", Feature.TREE, new TreeFeatureConfig.Builder(
+            return ConfiguredFeatures.register(name + "_tree", Feature.TREE, new TreeFeatureConfig.Builder(
                     new WeightedBlockStateProvider(randomBlock),
                     new StraightTrunkPlacer(trunkHeight, trunkRandomHeight, trunkSecondRandomHeight),
                     BlockStateProvider.of(leaves.getDefaultState()),
@@ -195,6 +195,19 @@ public class MFConfiguredFeatureRegistration {
             return  new TreeFeatureConfig.Builder(
                     new WeightedBlockStateProvider(randomBlock),
                     new FallenTrunkPlacer(3, 2, 0),
+                    BlockStateProvider.of(Blocks.OAK_LEAVES.getDefaultState()),
+                    new NoneFoliagePlacer(),
+                    new TwoLayersFeatureSize(0, 0, 0)
+            ).build();
+        }
+        public static <B extends Block> TreeFeatureConfig registerDead(B log, B logVariant) {
+            DataPool<BlockState> randomBlock = DataPool.<BlockState>builder()
+                    .add(log.getDefaultState(), 2)
+                    .add(logVariant.getDefaultState(), 1)
+                    .build();
+            return  new TreeFeatureConfig.Builder(
+                    new WeightedBlockStateProvider(randomBlock),
+                    new StraightTrunkPlacer(5, 4, 4),
                     BlockStateProvider.of(Blocks.OAK_LEAVES.getDefaultState()),
                     new NoneFoliagePlacer(),
                     new TwoLayersFeatureSize(0, 0, 0)

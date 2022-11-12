@@ -13,10 +13,12 @@ public class MFCutouts {
                 MFRegistry.GREEN_MAPLE_SAPLING,
                 MFRegistry.YELLOW_MAPLE_SAPLING,
                 MFRegistry.ORANGE_MAPLE_SAPLING,
+                MFRegistry.BROWN_MAPLE_SAPLING,
                 MFRegistry.POTTED_RED_MAPLE_SAPLING,
                 MFRegistry.POTTED_GREEN_MAPLE_SAPLING,
                 MFRegistry.POTTED_YELLOW_MAPLE_SAPLING,
-                MFRegistry.POTTED_ORANGE_MAPLE_SAPLING
+                MFRegistry.POTTED_ORANGE_MAPLE_SAPLING,
+                MFRegistry.POTTED_BROWN_MAPLE_SAPLING
                 );
     }
 }

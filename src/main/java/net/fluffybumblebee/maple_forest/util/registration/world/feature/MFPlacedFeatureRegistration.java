@@ -91,7 +91,7 @@ public class MFPlacedFeatureRegistration {
                         1
                 );
             }
-            if (Objects.equals(suffix, "no_bees")){
+            if (Objects.equals(suffix, "no_bees")) {
                 return MFPlacedFeatureRegistration.register(
                         colour + "_" + MFWoodTypes.MAPLE + "_placer_" + suffix,
                         spawner,

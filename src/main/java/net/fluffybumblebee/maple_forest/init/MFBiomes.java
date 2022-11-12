@@ -1,5 +1,6 @@
 package net.fluffybumblebee.maple_forest.init;
 
+import net.fluffybumblebee.maple_forest.world.biome.MFBarrenMapleWoods;
 import net.fluffybumblebee.maple_forest.world.biome.MFMapleWoodlands;
 import net.fluffybumblebee.maple_forest.world.biome.MFMapleBlossom;
 import net.minecraft.entity.EntityType;
@@ -18,6 +19,7 @@ import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import java.util.HashMap;
 import java.util.Map;
 public class MFBiomes {
+    @SuppressWarnings("SameParameterValue")
     private static int getSkyColor(float temperature) {
         float f = temperature / 3.0F;
         f = MathHelper.clamp(f, -1.0F, 1.0F);
@@ -75,6 +77,7 @@ public class MFBiomes {
 
     public static final RegistryKey<Biome> MAPLE_BLOSSOM = add("maple_blossom", MFMapleBlossom.MAPLE_BLOSSOM);
     public static final RegistryKey<Biome> MAPLE_WOODLANDS = add("maple_woodlands", MFMapleWoodlands.MAPLE_WOODLANDS);
+    public static final RegistryKey<Biome> BARREN_MAPLE_WOODS = add("barren_maple_woods", MFBarrenMapleWoods.BARREN_MAPLE_WOODS);
 
 
     static RegistryKey<Biome> add(String name, Biome biome) {
