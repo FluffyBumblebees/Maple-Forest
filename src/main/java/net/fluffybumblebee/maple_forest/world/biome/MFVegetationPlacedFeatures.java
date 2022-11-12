@@ -15,6 +15,7 @@ public class MFVegetationPlacedFeatures {
     public static final RegistryEntry<PlacedFeature> PUMPKINS;
     public static final RegistryEntry<PlacedFeature> FLOWER_MEADOW;
     public static final RegistryEntry<PlacedFeature> PATCH_GRASS_JUNGLE;
+    public static final RegistryEntry<PlacedFeature> PATCH_DEAD_BUSH;
 
     static {
         PUMPKINS = PlacedFeatures.register(
@@ -34,7 +35,11 @@ public class MFVegetationPlacedFeatures {
                 MapleForest.NAMESPACE + ":patch_grass_forest",
                 VegetationConfiguredFeatures.PATCH_GRASS_JUNGLE,
                 modifiers(2));
-
+        PATCH_DEAD_BUSH = PlacedFeatures.register(
+                MapleForest.NAMESPACE + "patch_dead_bush",
+                VegetationConfiguredFeatures.PATCH_DEAD_BUSH,
+                SquarePlacementModifier.of(),
+                PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+                BiomePlacementModifier.of());
     }
-
 }

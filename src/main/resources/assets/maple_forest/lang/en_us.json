@@ -3,11 +3,13 @@
   "block.maple_forest.yellow_maple_leaves": "Yellow Maple Leaves",
   "block.maple_forest.orange_maple_leaves": "Orange Maple Leaves",
   "block.maple_forest.red_maple_leaves": "Red Maple Leaves",
+  "block.maple_forest.brown_maple_leaves": "Brown Maple Leaves",
   
   "block.maple_forest.green_maple_sapling": "Green Maple Sapling",
   "block.maple_forest.yellow_maple_sapling": "Yellow Maple Sapling",
   "block.maple_forest.orange_maple_sapling": "Orange Maple Sapling",
   "block.maple_forest.red_maple_sapling": "Red Maple Sapling",
+  "block.maple_forest.brown_maple_sapling": "Brown Maple Sapling",
 
   "block.maple_forest.sappy_maple_log": "Sappy Maple Log",
   "block.maple_forest.maple_log": "Maple Log",
@@ -36,5 +38,6 @@
 
   "itemGroup.maple_forest.maple_forest": "Maple Forest",
   "biome.maple_forest.maple_woodlands": "Maple Woodlands",
-  "biome.maple_forest.maple_blossom": "Maple Blossom"
+  "biome.maple_forest.maple_blossom": "Maple Blossom",
+  "biome.maple_forest.barren_maple_woods": "Barren Maple Woods"
 }

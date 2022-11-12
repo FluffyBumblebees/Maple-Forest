@@ -14,7 +14,7 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 
 public class MFMapleWoodlands {
     public static final Biome MAPLE_WOODLANDS = new Biome.Builder()
-            .precipitation(Biome.Precipitation.RAIN)
+            .precipitation(Biome.Precipitation.NONE)
             .generationSettings(generationSettings())
             .spawnSettings(spawnSettings())
             .effects(MFBiomes.createDefaultBiomeEffects()

@@ -1,5 +1,6 @@
 package net.fluffybumblebee.maple_forest.init;
 
+import net.fluffybumblebee.maple_forest.world.biome.MFBarrenMapleWoods;
 import net.fluffybumblebee.maple_forest.world.biome.MFMapleBlossom;
 import net.fluffybumblebee.maple_forest.world.biome.MFMapleWoodlands;
 import net.minecraft.entity.EntityType;
@@ -76,6 +77,8 @@ public class MFBiomes {
 
     public static final RegistryKey<Biome> MAPLE_BLOSSOM = add("maple_blossom", MFMapleBlossom.MAPLE_BLOSSOM);
     public static final RegistryKey<Biome> MAPLE_WOODLANDS = add("maple_woodlands", MFMapleWoodlands.MAPLE_WOODLANDS);
+    public static final RegistryKey<Biome> BARREN_MAPLE_WOODS = add("barren_maple_woods", MFBarrenMapleWoods.BARREN_MAPLE_WOODS);
+
 
 
     static RegistryKey<Biome> add(String name, Biome biome) {
