@@ -1,6 +1,7 @@
 package net.fluffybumblebee.maple_forest.world.gen;
 
 import com.mojang.datafixers.util.Pair;
+import net.fluffybumblebee.maple_forest.config.MFConfig;
 import net.fluffybumblebee.maple_forest.init.MapleForest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -21,39 +22,48 @@ public class MFBiomeGeneration extends Region implements Runnable, TerraBlenderA
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        this.addBiome(
-                mapper,
-                ParameterUtils.Temperature.WARM,
-                ParameterUtils.Humidity.NEUTRAL,
-                ParameterUtils.Continentalness.COAST,
-                ParameterUtils.Erosion.EROSION_6,
-                ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_ASCENDING,
-                ParameterUtils.Depth.SURFACE,
-                0L,
-                MAPLE_BLOSSOM
-        );
-        this.addBiome(
-                mapper,
-                ParameterUtils.Temperature.WARM,
-                ParameterUtils.Humidity.DRY,
-                ParameterUtils.Continentalness.MID_INLAND,
-                ParameterUtils.Erosion.FULL_RANGE,
-                ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_ASCENDING,
-                ParameterUtils.Depth.SURFACE,
-                0L,
-                MAPLE_WOODLANDS
-        );
-        this.addBiome(
-                mapper,
-                ParameterUtils.Temperature.HOT,
-                ParameterUtils.Humidity.ARID,
-                ParameterUtils.Continentalness.FAR_INLAND,
-                ParameterUtils.Erosion.EROSION_0,
-                ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING,
-                ParameterUtils.Depth.SURFACE,
-                0L,
-                BARREN_MAPLE_WOODS
-        );
+        MapleForest.LOGGER.info("blossom: " + MFConfig.MAPLE_BLOSSOM);
+        if (MFConfig.MAPLE_BLOSSOM) {
+            this.addBiome(
+                    mapper,
+                    ParameterUtils.Temperature.WARM,
+                    ParameterUtils.Humidity.NEUTRAL,
+                    ParameterUtils.Continentalness.COAST,
+                    ParameterUtils.Erosion.EROSION_6,
+                    ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_ASCENDING,
+                    ParameterUtils.Depth.SURFACE,
+                    0L,
+                    MAPLE_BLOSSOM
+            );
+        }
+
+        if (MFConfig.MAPLE_WOODLANDS) {
+            this.addBiome(
+                    mapper,
+                    ParameterUtils.Temperature.WARM,
+                    ParameterUtils.Humidity.DRY,
+                    ParameterUtils.Continentalness.MID_INLAND,
+                    ParameterUtils.Erosion.FULL_RANGE,
+                    ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_ASCENDING,
+                    ParameterUtils.Depth.SURFACE,
+                    0L,
+                    MAPLE_WOODLANDS
+            );
+        }
+
+        if (MFConfig.BARREN_MAPLE_WOODS) {
+            this.addBiome(
+                    mapper,
+                    ParameterUtils.Temperature.HOT,
+                    ParameterUtils.Humidity.ARID,
+                    ParameterUtils.Continentalness.FAR_INLAND,
+                    ParameterUtils.Erosion.EROSION_0,
+                    ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING,
+                    ParameterUtils.Depth.SURFACE,
+                    0L,
+                    BARREN_MAPLE_WOODS
+            );
+        }
     }
 
     @Override
