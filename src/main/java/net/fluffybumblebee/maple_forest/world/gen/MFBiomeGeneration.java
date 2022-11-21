@@ -22,7 +22,6 @@ public class MFBiomeGeneration extends Region implements Runnable, TerraBlenderA
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        MapleForest.LOGGER.info("blossom: " + MFConfig.MAPLE_BLOSSOM);
         if (MFConfig.MAPLE_BLOSSOM) {
             this.addBiome(
                     mapper,
