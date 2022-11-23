@@ -5,13 +5,13 @@
   "block.maple_forest.red_maple_leaves": "红色枫叶",
   "block.maple_forest.brown_maple_leaves": "棕色枫叶",
 
-  "block.maple_forest.green_maple_sapling": "绿色枫树苗",
-  "block.maple_forest.yellow_maple_sapling": "黄色枫树苗",
-  "block.maple_forest.orange_maple_sapling": "橙色枫树苗",
-  "block.maple_forest.red_maple_sapling": "红色枫树苗",
-  "block.maple_forest.brown_maple_sapling": "棕色枫树苗",
+  "block.maple_forest.green_maple_sapling": "绿枫树苗",
+  "block.maple_forest.yellow_maple_sapling": "黄枫树苗",
+  "block.maple_forest.orange_maple_sapling": "橙枫树苗",
+  "block.maple_forest.red_maple_sapling": "红枫树苗",
+  "block.maple_forest.brown_maple_sapling": "棕枫树苗",
 
-  "block.maple_forest.sappy_maple_log": "多汁的枫树原木",
+  "block.maple_forest.sappy_maple_log": "流汁枫树原木",
   "block.maple_forest.maple_log": "枫树原木",
   "block.maple_forest.stripped_maple_log": "去皮枫树原木",
   "block.maple_forest.maple_wood": "枫木",
@@ -28,15 +28,15 @@
   "block.maple_forest.maple_sign": "枫木告示牌",
 
   "item.maple_forest.maple_boat": "枫木船",
-  "item.maple_forest.maple_sap": "枫树汁",
+  "item.maple_forest.maple_sap": "枫汁",
   "item.maple_forest.pancake": "煎饼",
-  "item.maple_forest.pancake_dough": "煎饼面皮",
-  "item.maple_forest.maple_flavoured_pancake": "枫香煎饼",
+  "item.maple_forest.pancake_dough": "煎饼面团",
+  "item.maple_forest.maple_flavoured_pancake": "枫味煎饼",
   "item.maple_forest.honey_flavoured_pancake": "蜂蜜煎饼",
-  "item.maple_forest.honeycomb_pancake_sandwich": "蜂巢煎饼三明治",
+  "item.maple_forest.honeycomb_pancake_sandwich": "蜂蜜煎饼三明治",
 
   "itemGroup.maple_forest.maple_forest": "枫林",
-  "biome.maple_forest.maple_woodlands": "Maple Woodlands",
-  "biome.maple_forest.maple_blossom": "Maple Blossom",
-  "biome.maple_forest.barren_maple_woods": "Barren Maple Woods"
+  "biome.maple_forest.maple_woodlands": "枫树林地",
+  "biome.maple_forest.maple_blossom": "枫花林地",
+  "biome.maple_forest.barren_maple_woods": "贫瘠的枫林"
 }
